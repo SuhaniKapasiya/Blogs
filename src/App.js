@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <div>
-      {/* hi  */}
+      {/* hi hi */}
       <Header />
       <Blogs />
       <Pagination />
