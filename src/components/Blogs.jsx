@@ -14,7 +14,7 @@ const Blogs = () => {
     // console.log("inside Blog components")
     // console.log(posts);
     return (
-        <div className='w-11/12 max-w-[750px] mb-8 py-5 flex flex-col gap-y-6 mt-[50px]'>
+        <div className='w-11/12 max-w-[750px]  py-5 flex flex-col gap-y-6 mt-[50px] mb-[70px]'>
             {
                 loading ?
                 (<Spinner/>) :

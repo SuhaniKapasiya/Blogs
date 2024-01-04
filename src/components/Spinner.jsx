@@ -3,8 +3,8 @@ import "./Spinner.css"
 
 const Spinner = () => {
   return (
-    <div className=''>
-      <div className='spinner mx-auto my-auto  flex justify-center items-center'></div>
+    <div className=' flex justify-center items-center h-screen w-full'>
+      <div className='spinner'></div>
     </div>
   )
 }
