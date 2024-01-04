@@ -50,6 +50,8 @@ export default function AppContextProvider({ children }) {
     handlePageChange,
   };
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={value}>
+    {children}
+    </AppContext.Provider>;
 }
 
