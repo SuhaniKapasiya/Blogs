@@ -14,7 +14,7 @@ const Blogs = () => {
     // console.log("inside Blog components")
     // console.log(posts);
     return (
-        <div className='w-11/12 max-w-[750px] py-5 flex flex-col gap-y-6 mt-[50px]'>
+        <div className='w-11/12 max-w-[750px] mb-8 py-5 flex flex-col gap-y-6 mt-[50px]'>
             {
                 loading ?
                 (<Spinner/>) :
@@ -27,7 +27,7 @@ const Blogs = () => {
                     ) :
                     (
                         posts.map((post) => (
-                            <div className=' mb-8 ' key={post.id}> {/* Added a key prop for optimization */}
+                            <div className='  ' key={post.id}> {/* Added a key prop for optimization */}
                                 <p className="font-bold text-md">{post.title}</p>
                                 <p className='text-xs mt-[4px]'>
                                     By <span className='italic'>{post.author}</span> on <span className="underline font-bold">{post.category}</span>
