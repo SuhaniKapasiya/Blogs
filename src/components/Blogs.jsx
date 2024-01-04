@@ -27,7 +27,7 @@ const Blogs = () => {
                     ) :
                     (
                         posts.map((post) => (
-                            <div key={post.id}> {/* Added a key prop for optimization */}
+                            <div className=' mb-8 ' key={post.id}> {/* Added a key prop for optimization */}
                                 <p className="font-bold text-md">{post.title}</p>
                                 <p className='text-xs mt-[4px]'>
                                     By <span className='italic'>{post.author}</span> on <span className="underline font-bold">{post.category}</span>
