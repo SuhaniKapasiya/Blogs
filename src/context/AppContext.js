@@ -9,10 +9,17 @@ export default function AppContextProvider({ children }) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
-  async function fetchBlogPosts(p) {
+  async function fetchBlogPosts(p ,tag=null ,category) {
     setloading(true);
     console.log("page is - ", p);
     let url = `${baseUrl}?page=${p}`;
+    if(tag){
+      url += `&tag=${tag}`;
+   }
+   if(category){
+     url += `&category=${category}`;
+      
+   }
 
     try {
       const result = await fetch(url);
