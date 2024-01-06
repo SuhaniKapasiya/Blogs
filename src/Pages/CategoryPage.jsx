@@ -12,7 +12,8 @@ const CategoryPage = () => {
 
   return (
     <div>
-        <Headers/>
+      
+      <Header/>
         <div>
             <button 
                onClick={() => navigation(-1)}

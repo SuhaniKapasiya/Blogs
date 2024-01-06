@@ -8,7 +8,7 @@ import { Route, Routes, useLocation, useSearchParams } from "react-router-dom";
 import Home from "./Pages/Home";
 import BlogPage from "./Pages/BlogPage"
 import TagPage from "./Pages/TagPage"
-
+import CategoryPage from "./Pages/CategoryPage";
 export default function App() {
 
   const { fetchBlogPosts } = useContext(AppContext);
@@ -29,7 +29,7 @@ export default function App() {
     }
     else if(location.pathname.includes("categories")){
       const category = location.pathname.split("/").at(-1).replaceALL("-","");
-      fetchBlogPosts(Number(page, null,category),tag);
+      fetchBlogPosts(Number(page, null,category));
     }
     else{
        fetchBlogPosts(Number(page))
