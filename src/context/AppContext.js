@@ -9,6 +9,7 @@ export default function AppContextProvider({ children }) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
+   //Fetch Blog Data
   async function fetchBlogPosts(p ,tag=null ,category) {
     setloading(true);
     console.log("page is - ", p);
