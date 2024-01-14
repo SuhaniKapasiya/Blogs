@@ -24,11 +24,14 @@ export default function App() {
 
     if(location.pathname.includes("tag")){
       //iska mtlab tag wala page show krna h
-      const tag = location.pathname.split("/").at(-1.).replaceALL("-","");
+      // const tag = location.pathname.split("/").at(-1).replaceAll("-", "");
+      const tag = location.pathname.split("/").pop().replaceAll("-", "");
+
       fetchBlogPosts(Number(page),tag);
     }
     else if(location.pathname.includes("categories")){
-      const category = location.pathname.split("/").at(-1).replaceALL("-","");
+      // const category = location.pathname.split("/").at(-1).replaceAll("-", "");
+      const category = location.pathname.split("/").pop().replaceAll("-", "");
       fetchBlogPosts(Number(page, null,category));
     }
     else{

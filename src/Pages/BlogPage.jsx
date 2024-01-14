@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation, useNavigation } from 'react-router-dom';
+import { useLocation, useNavigate,  } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import Header from '../components/Header';
 import { baseUrl } from '../baseUrl';
@@ -9,15 +9,16 @@ const BlogPage = () => {
     const [blog, setBlog] = useState(null);
     const [relatedblog,setRelatedBlogs] = useState([]);
     const location = useLocation();
-    const navigation = useNavigation();
-    const {setLoading,loading} =useContext(AppContext);
+    const navigation = useNavigate();
+    const { loading, setloading } = useContext(AppContext);
 
-    const blogId = location.pathname.split("/").at(-1);
+    // const blogId = location.pathname.split("/").at(-1);
+     const blogId = location.pathname.split("/").pop();
 
 
     async function fetchRelatedBlogs() {
 
-      setLoading(true);
+     setloading(true);
        let url = `${baseUrl}?blogId=${blogId}`;
   
        try {
@@ -26,6 +27,8 @@ const BlogPage = () => {
   
          setBlog(data.blog);
          setRelatedBlogs(data.relatedblogs);
+        //  console.log("inside Blog Pade")
+        //  console.log(data.blog);
   
         
        } catch (error) {
@@ -33,16 +36,14 @@ const BlogPage = () => {
           setBlog(null);
           setRelatedBlogs([]);
        }
-       setLoading(false)
+     setloading(false);
  }         
 
-useEffect(()=>{
-
-  if(blogId){
+useEffect(() => {
+  if (blogId) {
     fetchRelatedBlogs();
   }
-
-},[location.pathname]);
+}, [location.pathname, blogId]);
 
   return (
     <div>

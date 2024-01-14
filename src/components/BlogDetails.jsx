@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const BlogDetails = ({ post }) => {
   useEffect(() => {
     console.log("post is - ---- ", post);
-  });
+  },[post]);
   return (
     <div>
       <NavLink to={`/blog/${post.id}`}>
@@ -13,15 +13,15 @@ const BlogDetails = ({ post }) => {
       <p>
         By
         <span>{post.author}</span>on{" "}
-        <NavLink to={`/categories/${post.category.replaceAll(" ", "-")}`}>
+        <NavLink to={`/categories/${post.category.replaceAll("", "-")}`}>
           <span>{post.category}</span>
         </NavLink>
       </p>
       <p>Posted on {post.date}</p>
       <p>{post.content}</p>
       <div>
-           {post.tag.map((tag,index)=>(
-              <NavLink key ={index} to={`/tag/${tag.replaceAll(" ","-")}`}>
+           {post.tags.map((tag,index)=>(
+              <NavLink key ={index} to={`/tag/${tag.replaceAll("","-")}`}>
                 <span>{`#${tag}`}</span>
               </NavLink>
            ))}
